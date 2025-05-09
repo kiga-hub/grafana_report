@@ -1,0 +1,29 @@
+{
+    "basic":{
+        "grafana_url": "http://192.168.8.200:3000",
+        "username": "admin",
+        "password": "password",
+        "dashboard": "VM-exporter",
+        "time_range": "1h",
+        "csv_dir": "./grafana_csv",
+        "output_dir": "./data"
+    },
+    "thresholds": {
+        "mean_median_ratio": 1.2,
+        "max_mean_ratio": 2.0,
+        "std_mean_ratio": 0.3,
+        "network_std_mean_ratio": 0.5,
+        "outlier_std_times": 3.0,
+        "stability_good_percentage": 80.0,
+        "stability_normal_percentage": 50.0,
+        "resource_good_percentage": 0.7
+    },
+    "metric_keywords": {
+        "cpu": ["cpu", "负载", "load", "processor"],
+        "memory": ["内存", "memory", "ram", "swap"],
+        "disk": ["磁盘", "disk", "iops", "io", "存储", "storage", "volume"],
+        "network": ["网络", "network", "数据包", "packet", "流量", "traffic", "socket", "连接", "connection"],
+        "database": ["数据库", "database", "db", "sql", "nosql", "query"],
+        "application": ["应用", "application", "app", "service", "api", "latency", "响应时间"]
+    }
+}
