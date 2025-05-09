@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Combined script for extracting Grafana dashboard data, analyzing CSV files, and generating performance comparison reports.
-This script integrates the functionality of grafana.py, analysis.py, and report.py into a single executable.
+Script for extracting Grafana dashboard data, analyzing CSV files, and generating performance comparison reports.
 """
 
 import os
@@ -962,7 +961,6 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     config_file_default = os.path.join(script_dir, "analysis_config.json")
     
-    # 首先加载配置文件
     if os.path.exists(config_file_default):
         config = load_config(config_file_default)
         default_config = config.get("basic", {})
@@ -984,7 +982,6 @@ def main():
     parser.add_argument("--folder2", help="Older data folder (optional, default: second latest)", default=None)
     args = parser.parse_args()
     
-
     if args.config:
         config = load_config(args.config)
         default_config = config.get("basic", {})
